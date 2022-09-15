@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled from "styled-components/macro"
 import Moment from 'react-moment';
 
 const Container = styled.div`

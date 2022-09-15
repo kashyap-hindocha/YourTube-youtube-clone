@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro"
 import YourTube from "../img/logo.png";
 import HomeIcon from "@mui/icons-material/Home";
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
@@ -23,7 +23,6 @@ import { useSelector } from "react-redux";
 const Container = styled.div`
   flex: 1;
   background-color: ${({ theme }) => theme.bgLighter};
-  height: 100vh;
   color: ${({ theme }) => theme.text};
   font-size: 14px;
   position: sticky;
