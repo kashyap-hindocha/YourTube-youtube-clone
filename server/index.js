@@ -6,6 +6,7 @@ import videoRoutes from "./routes/videos.js";
 import commentRoutes from "./routes/comments.js";
 import authRoutes from "./routes/auth.js";
 import cookieParser from "cookie-parser";
+import path from "path";
 
 
 const app = express();
@@ -41,8 +42,16 @@ app.use((err, req, res, next) => {
   });
 });
 
-const port = 8800;
+//Serve static assets if in production
+if(process.env.NODE_ENV !== 'production') {
+  //Set static folder
+  app.use(express.static('client/build'))
+  app.get('*', (req, res)=> {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  })
+}
 
+const port = 8800;
 app.listen(port, () => {
   connect();
   console.log("Connected to Server on port " + port);
