@@ -41,6 +41,7 @@ const Comment = ({ comment }) => {
 
   useEffect(() => {
     const fetchComment = async () => {
+      axios.defaults.baseURL = process.env.BASE_URL+'/api/';
       const res = await axios.get(`/users/find/${comment.userId}`);
       setChannel(res.data)
     };

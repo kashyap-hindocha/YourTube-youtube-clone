@@ -12,6 +12,7 @@ const Recommendation = ({ tags }) => {
 
   useEffect(() => {
     const fetchVideos = async () => {
+      axios.defaults.baseURL = process.env.BASE_URL+'/api/';
       const res = await axios.get(`/videos/tags?tags=${tags}`);
       setVideos(res.data);
     };

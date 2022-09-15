@@ -79,6 +79,7 @@ const SignIn = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
+      axios.defaults.baseURL = process.env.BASE_URL+'/api/';
       const res = await axios.post("/auth/signin", { name, password });
       dispatch(loginSuccess(res.data));
       navigate("/")

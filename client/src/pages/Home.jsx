@@ -14,6 +14,7 @@ const Home = ({type}) => {
 
   useEffect(() => {
     const fetchVideos = async () => {
+      axios.defaults.baseURL = process.env.BASE_URL+'/api/';
       const res = await axios.get(`/videos/${type}`);
       setVideos(res.data);
     };

@@ -37,6 +37,7 @@ const Comments = ({videoId}) => {
   useEffect(() => {
     const fetchComments = async () => {
       try {
+        axios.defaults.baseURL = process.env.BASE_URL+'/api/';
         const res = await axios.get(`/comments/${videoId}`);
         setComments(res.data);
       } catch (err) {}
