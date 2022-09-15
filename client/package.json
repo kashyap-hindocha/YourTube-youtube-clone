@@ -50,5 +50,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://yourtube-self-coded.herokuapp.com/api/"
+  "proxy": "https://yourtube-self-coded.herokuapp.com/api"
 }
