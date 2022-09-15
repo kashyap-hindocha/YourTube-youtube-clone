@@ -138,7 +138,7 @@ const Upload = ({ setOpen }) => {
 
   const handleUpload = async (e)=>{
     e.preventDefault();
-    axios.defaults.baseURL = process.env.BASE_URL+'/api/';
+    axios.defaults.baseURL = "https://yourtube-self-coded.herokuapp.com/api/"
     const res = await axios.post("/videos", {...inputs, tags})
     setOpen(false)
     dispatch(fetchSuccess(res.data))

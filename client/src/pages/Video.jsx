@@ -127,7 +127,7 @@ const Video = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        axios.defaults.baseURL = process.env.BASE_URL+'/api/';
+        axios.defaults.baseURL = "https://yourtube-self-coded.herokuapp.com/api/"
         const videoRes = await axios.get(`/videos/find/${path}`);
         const channelRes = await axios.get(
           `/users/find/${videoRes.data.userId}`

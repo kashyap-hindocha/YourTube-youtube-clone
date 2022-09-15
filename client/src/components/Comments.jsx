@@ -37,7 +37,7 @@ const Comments = ({videoId}) => {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        axios.defaults.baseURL = process.env.BASE_URL+'/api/';
+        axios.defaults.baseURL = "https://yourtube-self-coded.herokuapp.com/api/"
         const res = await axios.get(`/comments/${videoId}`);
         setComments(res.data);
       } catch (err) {}

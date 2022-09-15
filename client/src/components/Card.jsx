@@ -58,7 +58,7 @@ const Card = ({ type, video }) => {
 
   useEffect(() => {
     const fetchChannel = async () => {
-      axios.defaults.baseURL = process.env.BASE_URL+'/api/';
+      axios.defaults.baseURL = "https://yourtube-self-coded.herokuapp.com/api/"
       const res = await axios.get(`/users/find/${video.userId}`);
       setChannel(res.data);
     };

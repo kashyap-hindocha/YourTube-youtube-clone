@@ -12,7 +12,7 @@ const Recommendation = ({ tags }) => {
 
   useEffect(() => {
     const fetchVideos = async () => {
-      axios.defaults.baseURL = process.env.BASE_URL+'/api/';
+      axios.defaults.baseURL = "https://yourtube-self-coded.herokuapp.com/api/"
       const res = await axios.get(`/videos/tags?tags=${tags}`);
       setVideos(res.data);
     };
